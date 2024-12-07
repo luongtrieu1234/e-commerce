@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { cutters, Cutter } from "../../constant/Data";
 import Image from "../../assets/images/test.jpg";
+import Video from "../../assets/videos/test.mp4";
 import { useState } from "react";
 import { FaFacebook, FaPhone, FaEnvelope, FaComments } from "react-icons/fa";
+import InformationCutter from "./components/InformationCutter";
 
 function Detail() {
   const { id } = useParams();
@@ -21,26 +23,55 @@ function Detail() {
 
   return (
     <div className="container mx-auto p-4">
-      <h3 className="text-xl font-bold text-gray-800 mb-4">Hình ảnh dao cắt</h3>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4 md:flex md:justify-center md:gap-24">
         {/* Hình ảnh dao cắt */}
-        <div className="flex justify-center">
-          <img
-            src={Image}
-            alt={cutter.code}
-            className="w-full max-w-md rounded-lg shadow-md"
-          />
+        <div className="md:flex md:flex-col md:items-start">
+          <h3 className="text-xl font-bold text-gray-800 mb-4">
+            Hình ảnh dao cắt
+          </h3>
+          <div className="flex justify-center md:justify-start">
+            <img
+              src={Image}
+              alt={cutter.code}
+              className="w-full max-w-md rounded-lg shadow-md"
+            />
+          </div>
         </div>
-        <p className="text-2xl font-bold text-orange-500">
-          MÃ DAO: {cutter.code}
-        </p>
+        {/* Thông tin dao */}
+        <div>
+          <p className="text-2xl font-bold text-orange-500 md:text-left">
+            MÃ DAO: {cutter.code}
+          </p>
 
-        <button
-          className="bg-green-500 text-white font-bold px-4 py-2 rounded text-xl"
-          onClick={togglePopup}
-        >
-          Báo giá
-        </button>
+          {/* Button Báo giá */}
+          <div className="md:text-left">
+            <button
+              className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded text-xl md:w-60 md:h-12 md:mb-2 mt-4 mb-4"
+              onClick={togglePopup}
+            >
+              Báo giá
+            </button>
+          </div>
+
+          {/* Thông tin chi tiết dao*/}
+          <InformationCutter cutter={cutter} />
+
+          {/* Video dao*/}
+          <p className="text-xl font-bold text-gray-800 mb-2 mt-4 text-left">
+            VIDEO DAO CẮT
+          </p>
+          <video
+            muted
+            autoPlay
+            playsInline
+            loop
+            className="p-4 max-w-lg max-h-96"
+          >
+            <source src={Video} type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Popup thông tin liên hệ */}
         {showPopup && (
           <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
             <div className="bg-white p-4 rounded shadow-lg">
@@ -101,34 +132,6 @@ function Detail() {
             </div>
           </div>
         )}
-
-        {/* Chi tiết dao*/}
-        <div className="text-left">
-          <p className="text-xl font-bold text-gray-800 mb-2">
-            THÔNG TIN CHI TIẾT
-          </p>
-          <p className="text-lg text-gray-600 mb-2">
-            - Chất liệu: {cutter.material}
-          </p>
-          <p className="text-lg text-gray-600 mb-2">
-            - Góc (°): {cutter.angle}°
-          </p>
-          <p className="text-lg text-gray-600 mb-2">
-            - Dài (mm): {cutter.length}
-          </p>
-          <p className="text-lg text-gray-600 mb-2">
-            - Rộng (mm): {cutter.width}
-          </p>
-          <p className="text-lg text-gray-600 mb-2">
-            - Độ dày (mm): {cutter.thickness}
-          </p>
-          <p className="text-lg text-gray-600 mb-2">
-            - Chiều dài lưỡi dao (mm): {cutter.bladeLength}
-          </p>
-          <p className="text-lg text-gray-600 mb-2">
-            - Chiều dài đường kính lỗ (mm): {cutter.holeDiameter}
-          </p>
-        </div>
       </div>
     </div>
   );

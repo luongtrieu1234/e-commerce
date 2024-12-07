@@ -26,5 +26,6 @@ for (let i = 1; i <= 5; i++) {
     bladeLength: 23,
     holeDiameter: 0, // Assuming no value provided
     imageUrl: "@/assets/images/test.jpg",
+    videoUrl: "../../../assets/video/test.mp4",
   });
 }
