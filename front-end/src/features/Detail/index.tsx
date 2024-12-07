@@ -38,7 +38,7 @@ function Detail() {
           </div>
         </div>
         {/* Thông tin dao */}
-        <div>
+        <div className="max-w-full">
           <p className="text-2xl font-bold text-orange-500 md:text-left">
             MÃ DAO: {cutter.code}
           </p>
@@ -65,7 +65,7 @@ function Detail() {
             autoPlay
             playsInline
             loop
-            className="p-4 max-w-lg max-h-96"
+            className="max-w-xs max-h-96 md:max-w-xl"
           >
             <source src={Video} type="video/mp4" />
           </video>
