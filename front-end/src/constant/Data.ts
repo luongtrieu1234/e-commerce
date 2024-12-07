@@ -1,4 +1,4 @@
-export interface Knife {
+export interface Cutter {
   id: number;
   code: string;
   material: string;
@@ -9,12 +9,13 @@ export interface Knife {
   bladeLength: number;
   holeDiameter: number;
   imageUrl: string;
+  videoUrl?: string;
 }
 
-export const knifes: Knife[] = [];
+export const cutters: Cutter[] = [];
 
 for (let i = 1; i <= 5; i++) {
-  knifes.push({
+  cutters.push({
     id: i,
     code: "KZA01",
     material: "Thép Vonfram",
@@ -24,6 +25,6 @@ for (let i = 1; i <= 5; i++) {
     thickness: 0.63,
     bladeLength: 23,
     holeDiameter: 0, // Assuming no value provided
-    imageUrl: "@assets/images/exp.jpg",
+    imageUrl: "@/assets/images/test.jpg",
   });
 }
