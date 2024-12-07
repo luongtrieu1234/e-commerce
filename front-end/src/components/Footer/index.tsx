@@ -11,13 +11,13 @@ function Footer() {
     <footer className="bg-gray-800 text-white p-6">
       <div className="container mx-auto flex flex-col md:flex-row md:justify-start md:gap-36">
         <div className="mb-4 md:mb-0 text-left max-w-xl">
-          <h1 className="text-2xl font-bold text-blue-400 mb-4">
+          <h1 className="text-xl font-bold text-blue-400 mb-4">
             Thông Tin Công Ty
           </h1>
-          <h1 className="text-xl font-bold mb-2 text-orange-500">
+          <h1 className="text-lg font-bold mb-2 text-orange-500">
             CÔNG TY TNHH CHÍNH THỰC
           </h1>
-          <p className="mb-2 flex items-start flex-wrap">
+          <p className="mb-2 flex items-start flex-wrap text-sm">
             <FaMapMarkerAlt className="mr-2 mt-1 flex-shrink-0" color="red" />
             <strong className="whitespace-nowrap flex-shrink-0">Map:</strong>
             <span className="flex-grow">
@@ -27,19 +27,19 @@ function Footer() {
           </p>
         </div>
         <div className="mb-4 md:mb-0 text-left">
-          <h1 className="text-2xl font-bold text-blue-400 mb-4">
+          <h1 className="text-xl font-bold text-blue-400 mb-4">
             Kết Nối Với Chúng Tôi
           </h1>
-          <p className="mb-2 flex items-center">
+          <p className="mb-2 flex items-center text-sm">
             <FaComments className="mr-2" color="green" /> <strong>Zalo:</strong>
             &nbsp;0916412896
           </p>
-          <p className="mb-2 flex items-center">
+          <p className="mb-2 flex items-center text-sm">
             <FaPhone className="mr-2" color="blue" />{" "}
             <strong>Điện Thoại:</strong>
             &nbsp;0916412896
           </p>
-          <p className="mb-2 flex items-center">
+          <p className="mb-2 flex items-center text-sm">
             <FaEnvelope className="mr-2" color="yellow" />{" "}
             <strong>Mail:</strong>&nbsp;
             <a
@@ -49,7 +49,7 @@ function Footer() {
               maycatchinhthuc@gmail.com
             </a>
           </p>
-          <p className="mb-2 flex items-center">
+          <p className="mb-2 flex items-center text-sm">
             <FaFacebook className="mr-2" color="blue" />{" "}
             <strong>Facebook:</strong>&nbsp;
             <a

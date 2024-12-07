@@ -1,21 +1,29 @@
-export interface Product {
+export interface Knife {
   id: number;
-  name: string;
-  description: string;
-  price: number;
+  code: string;
+  material: string;
+  angle: number;
+  length: number;
+  width: number;
+  thickness: number;
+  bladeLength: number;
+  holeDiameter: number;
   imageUrl: string;
-  category: string;
 }
 
-export const products: Product[] = [];
+export const knifes: Knife[] = [];
 
-for (let i = 1; i <= 15; i++) {
-  products.push({
+for (let i = 1; i <= 5; i++) {
+  knifes.push({
     id: i,
-    name: `Product ${i}`,
-    description: `Description for product ${i}`,
-    price: 99.99,
-    imageUrl: `https://example.com/product${i}.jpg`,
-    category: `Category ${i}`,
+    code: "KZA01",
+    material: "Thép Vonfram",
+    angle: 15,
+    length: 30,
+    width: 6.3,
+    thickness: 0.63,
+    bladeLength: 23,
+    holeDiameter: 0, // Assuming no value provided
+    imageUrl: "@assets/images/exp.jpg",
   });
 }

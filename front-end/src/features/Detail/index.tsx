@@ -1,11 +1,9 @@
+import { useParams } from "react-router-dom";
+
 function Detail() {
-  return (
-    <>
-      <h1 className="text-7xl font-bold underline text-green-600">
-        Detail Page
-      </h1>
-    </>
-  );
+  const { id } = useParams();
+
+  return <div>Chi tiết dao có ID: {id}</div>;
 }
 
 export default Detail;

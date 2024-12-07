@@ -1,24 +1,51 @@
-import { products } from "../../constant/Data";
-import { Link } from "react-router-dom";
+import { knifes } from "../../constant/Data";
+import { useState } from "react";
+import KnifeCard from "./components/Knife";
 
 function Home() {
+  // State active tab
+  const [activeTab, setActiveTab] = useState("Tất cả");
+
+  // List categories
+  const categories = ["Tất cả", "Lưỡi dao", "Máy cắt"];
+
   return (
-    <>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4">
-        {products.map((product) => (
+    <div className="flex flex-col md:flex-row gap-6 p-6">
+      {/* Sidebar */}
+      <nav className="md:w-2/12 w-full md:h-screen bg-gray-100 shadow-md p-6">
+        <h1 className="text-2xl font-bold text-blue-600 mb-4">
+          Danh mục sản phẩm
+        </h1>
+        <ul className="flex md:flex-col justify-between items-center md:space-y-4 space-x-6 md:space-x-0">
+          {categories.map((category) => (
+            <li key={category} className="flex-1 text-center md:text-left">
+              <button
+                className={`px-4 py-2 rounded-lg transition-colors duration-300 font-medium ${
+                  activeTab === category
+                    ? "bg-blue-500 text-white"
+                    : "text-gray-700 hover:text-blue-500 hover:bg-blue-100"
+                }`}
+                onClick={() => setActiveTab(category)}
+              >
+                {category}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Product List */}
+      <ul className="md:w-10/12 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        {knifes.map((knife) => (
           <li
-            key={product.id}
-            className="border p-4 rounded-lg bg-white shadow hover:bg-gray-200"
+            key={knife.id}
+            className="border p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <Link to="/detail" className="block">
-              <div className="text-2xl text-gray-800">{product.name}</div>
-              <p className="text-lg text-gray-600">{product.description}</p>
-              <p className="text-lg text-gray-600">${product.price}</p>
-            </Link>
+            <KnifeCard knife={knife} />
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 
