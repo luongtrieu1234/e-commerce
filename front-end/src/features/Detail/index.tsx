@@ -5,6 +5,7 @@ import Video from "../../assets/videos/test.mp4";
 import { useState } from "react";
 import { FaFacebook, FaPhone, FaEnvelope, FaComments } from "react-icons/fa";
 import InformationCutter from "./components/InformationCutter";
+import Table from "./components/Table";
 
 function Detail() {
   const { id } = useParams();
@@ -23,7 +24,7 @@ function Detail() {
 
   return (
     <div className="container mx-auto p-4 bg-gray-700">
-      <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4 md:flex md:justify-center md:gap-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4 md:flex md:justify-center md:gap-16 lg:mx-20 xl:mx-52">
         {/* Hình ảnh dao cắt */}
         <div className="md:flex md:flex-col md:items-start">
           <h3 className="text-xl font-bold text-gray-200 mb-4">
@@ -136,6 +137,8 @@ function Detail() {
           </div>
         )}
       </div>
+      {/* Bảng thông số kỹ thuật */}
+      <Table />
     </div>
   );
 }

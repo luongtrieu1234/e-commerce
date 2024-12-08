@@ -12,7 +12,7 @@ function Home() {
   const categories = ["Lưỡi dao", "Máy cắt"];
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 p-6 md:mx-40 bg-gray-700">
+    <div className="flex flex-col md:flex-row gap-6 p-6 md:mx-14 lg:mx-40 bg-gray-700">
       {/* Sidebar */}
       <nav className="border md:w-3/12 w-full md:h-screen bg-gray-800 shadow-md p-2 border-gray-700">
         <h1 className="text-xl font-bold text-blue-700 mb-2 text-left md:pb-2 md:border-b md:border-gray-300">
