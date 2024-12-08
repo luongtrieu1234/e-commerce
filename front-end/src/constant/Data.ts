@@ -28,7 +28,7 @@ export interface CuttingMchine {
 
 export const cutters: Cutter[] = [];
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 4; i++) {
   cutters.push({
     id: i,
     code: "KZA01",

@@ -108,19 +108,19 @@ function Header() {
                 <div className="space-y-2 py-6">
                   <a
                     href="/"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-blue-500"
                   >
                     Trang chủ
                   </a>
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-blue-500"
                   >
                     Sản phẩm
                   </a>
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-blue-500"
                   >
                     Về chúng tôi
                   </a>
@@ -128,7 +128,7 @@ function Header() {
                 <div className="py-6">
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-blue-500"
                   >
                     Admin Login
                   </a>

@@ -35,7 +35,7 @@ function Footer() {
             &nbsp;0916412896
           </p>
           <p className="mb-2 flex items-center text-sm">
-            <FaPhone className="mr-2" color="blue" />{" "}
+            <FaPhone className="mr-2" color="red" />{" "}
             <strong>Điện Thoại:</strong>
             &nbsp;0916412896
           </p>

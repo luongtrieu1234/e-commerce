@@ -10,13 +10,12 @@ function CutterCard({ cutter }: CutterProps) {
   return (
     <li
       key={cutter.id}
-      className="border-2 p-6 bg-white shadow-lg hover:shadow-xl hover:border-blue-600 transition-shadow duration-300 border-gray-300"
+      className="border-2 p-6 md:max-h-96 bg-white shadow-lg hover:shadow-xl hover:border-blue-600 transition-shadow duration-300 border-gray-300"
     >
       <Link to={`/detail/${cutter.id}`} className="block hover:no-underline">
         <p className="text-lg text-blue-600 mb-1 text-left font-bold">
           Lưỡi Dao
         </p>
-        <p className="text-sm text-gray-600 mb-1">Id: {cutter.id}</p>
         <div className="overflow-hidden rounded-lg">
           <img
             src={Image}

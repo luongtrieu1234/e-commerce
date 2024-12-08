@@ -46,7 +46,7 @@ function Detail() {
           {/* Button Báo giá */}
           <div className="md:text-left">
             <button
-              className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded text-xl md:w-60 md:h-12 md:mb-2 mt-4 mb-4"
+              className="bg-green-600 hover:bg-green-800 text-white font-bold px-4 py-2 rounded text-xl md:w-60 md:h-12 md:mb-2 mt-4 mb-4"
               onClick={togglePopup}
             >
               Báo giá
@@ -88,7 +88,7 @@ function Detail() {
 
               {/* Điện thoại */}
               <p className="mb-2 flex items-center text-sm">
-                <FaPhone className="mr-2" color="blue" />{" "}
+                <FaPhone className="mr-2" color="red" />{" "}
                 <strong>Điện Thoại:</strong>
                 &nbsp;0916412896
               </p>
