@@ -6,8 +6,13 @@ import { useState } from "react";
 import { FaFacebook, FaPhone, FaEnvelope, FaComments } from "react-icons/fa";
 import InformationCutter from "./components/InformationCutter";
 import Table from "./components/Table";
+import { useEffect } from "react";
 
 function Detail() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { id } = useParams();
 
   const [showPopup, setShowPopup] = useState(false);
