@@ -22,11 +22,11 @@ function Detail() {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 bg-gray-700">
       <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4 md:flex md:justify-center md:gap-24">
         {/* Hình ảnh dao cắt */}
         <div className="md:flex md:flex-col md:items-start">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">
+          <h3 className="text-xl font-bold text-gray-200 mb-4">
             Hình ảnh dao cắt
           </h3>
           <div className="flex justify-center md:justify-start">
@@ -39,17 +39,18 @@ function Detail() {
         </div>
         {/* Thông tin dao */}
         <div className="max-w-full">
-          <p className="text-2xl font-bold text-orange-500 md:text-left">
+          <p className="text-2xl font-bold text-orange-600 md:text-left">
             MÃ DAO: {cutter.code}
           </p>
 
           {/* Button Báo giá */}
-          <div className="md:text-left">
+          <div className="md:text-left mb-3">
             <button
-              className="bg-green-600 hover:bg-green-800 text-white font-bold px-4 py-2 rounded text-xl md:w-60 md:h-12 md:mb-2 mt-4 mb-4"
+              className="bg-red-700 hover:bg-red-800 text-white font-bold px-4 py-2 rounded text-xl md:w-60 md:h-12 md:mb-2 mt-4 mb-4 flex items-center justify-center"
               onClick={togglePopup}
             >
-              Báo giá
+              <FaComments className="mr-2" />
+              Nhận báo giá
             </button>
           </div>
 
@@ -57,18 +58,20 @@ function Detail() {
           <InformationCutter cutter={cutter} />
 
           {/* Video dao*/}
-          <p className="text-xl font-bold text-gray-800 mb-2 mt-4 text-left">
-            VIDEO DAO CẮT
+          <p className="text-xl font-bold text-white bg-blue-800 text-left py-1 mb-2  pl-4">
+            VIDEO SẢN PHẨM
           </p>
-          <video
-            muted
-            autoPlay
-            playsInline
-            loop
-            className="max-w-xs max-h-96 md:max-w-xl"
-          >
-            <source src={Video} type="video/mp4" />
-          </video>
+          <div className="flex justify-center">
+            <video
+              muted
+              autoPlay
+              playsInline
+              loop
+              className="max-w-xs max-h-96 md:max-w-xl"
+            >
+              <source src={Video} type="video/mp4" />
+            </video>
+          </div>
         </div>
 
         {/* Popup thông tin liên hệ */}
