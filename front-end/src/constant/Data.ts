@@ -12,6 +12,20 @@ export interface Cutter {
   videoUrl?: string;
 }
 
+export interface CuttingMchine {
+  id: number;
+  code: string;
+  material: string;
+  angle: number;
+  length: number;
+  width: number;
+  thickness: number;
+  bladeLength: number;
+  holeDiameter: number;
+  imageUrl: string;
+  videoUrl?: string;
+}
+
 export const cutters: Cutter[] = [];
 
 for (let i = 1; i <= 5; i++) {

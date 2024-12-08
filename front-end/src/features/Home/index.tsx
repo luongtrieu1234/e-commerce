@@ -10,10 +10,10 @@ function Home() {
   const categories = ["Tất cả", "Lưỡi dao", "Máy cắt"];
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 p-6">
+    <div className="flex flex-col md:flex-row gap-6 p-6 md:mx-40">
       {/* Sidebar */}
-      <nav className="md:w-2/12 w-full md:h-screen bg-gray-100 shadow-md p-2">
-        <h1 className="text-2xl font-bold text-blue-600 mb-2">
+      <nav className="border md:w-3/12 w-full md:h-screen bg-gray-100 shadow-md p-2 border-gray-300">
+        <h1 className="text-xl font-bold text-blue-600 mb-2 text-left">
           Danh mục sản phẩm
         </h1>
         <ul className="flex md:flex-col justify-between items-center md:space-y-4">
@@ -37,12 +37,7 @@ function Home() {
       {/* Product List */}
       <ul className="md:w-10/12 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {cutters.map((cutter) => (
-          <li
-            key={cutter.id}
-            className="border p-6 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
-            <CutterCard cutter={cutter} />
-          </li>
+          <CutterCard key={cutter.id} cutter={cutter} />
         ))}
       </ul>
     </div>

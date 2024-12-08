@@ -15,10 +15,10 @@ function Detail() {
     setShowPopup(!showPopup);
   };
 
-  const cutter = cutters.find((k: Cutter) => k.id.toString() === id); // Tìm dao theo ID
+  const cutter = cutters.find((k: Cutter) => k.id.toString() === id);
 
   if (!cutter) {
-    return <div>Không tìm thấy sản phẩm.</div>; // Nếu không tìm thấy dao
+    return <div>Không tìm thấy sản phẩm.</div>;
   }
 
   return (
