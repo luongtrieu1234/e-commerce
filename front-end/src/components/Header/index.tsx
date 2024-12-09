@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPhone } from "react-icons/fa";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,9 +62,10 @@ function Header() {
           </a>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm/6 font-semibold text-white">
-            Admin <span aria-hidden="true">&rarr;</span>
-          </a>
+          <p className="flex items-center text-sm/6">
+            <FaPhone className="mr-2" color="blue" />
+            &nbsp;0916412896
+          </p>
         </div>
       </nav>
 
@@ -125,13 +127,11 @@ function Header() {
                     Về chúng tôi
                   </a>
                 </div>
-                <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-blue-500"
-                  >
-                    Admin Login
-                  </a>
+                <div className="py-6 text-center flex justify-center">
+                  <p className="flex items-center text-sm">
+                    <FaPhone className="mr-2" color="blue" />
+                    &nbsp;0916412896
+                  </p>
                 </div>
               </div>
             </div>
