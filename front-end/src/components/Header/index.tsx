@@ -54,10 +54,10 @@ function Header() {
           <a href="/" className="text-sm/6 font-semibold text-white">
             Trang chủ
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-white">
+          <a href="/" className="text-sm/6 font-semibold text-white">
             Sản phẩm
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-white">
+          <a href="#footer" className="text-sm/6 font-semibold text-white">
             Về chúng tôi
           </a>
         </div>
@@ -115,13 +115,13 @@ function Header() {
                     Trang chủ
                   </a>
                   <a
-                    href="#"
+                    href="/"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-blue-500"
                   >
                     Sản phẩm
                   </a>
                   <a
-                    href="#"
+                    href="#footer"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-blue-500"
                   >
                     Về chúng tôi
