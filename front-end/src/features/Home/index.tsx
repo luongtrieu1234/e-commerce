@@ -1,12 +1,14 @@
-import { cutters } from "../../constant/Data";
+import { cutters, cuttingMchines } from "../../constant/Data";
 import { useState } from "react";
 import CutterCard from "./components/CutterCard";
+import CuttingMchineCard from "./components/CuttingMchineCard";
 
 function Home() {
   // State active tab
   const [activeTab, setActiveTab] = useState("Lưỡi dao");
 
-  const TotalProducts = cutters.length;
+  const totalCutters = cutters.length;
+  const totalcuttingMchines = cuttingMchines.length;
 
   // List categories
   const categories = ["Lưỡi dao", "Máy cắt"];
@@ -39,21 +41,44 @@ function Home() {
         </ul>
       </nav>
 
-      {/* Product List */}
-      <div className="md:w-10/12 w-full">
-        <div className="mb-4 text-left md:mt-3">
-          <p className="text-lg font-medium text-white">
-            Tổng cộng{" "}
-            <span className="text-blue-700 text-2xl">{TotalProducts}</span> sản
-            phẩm
-          </p>
+      {activeTab === "Lưỡi dao" ? (
+        // Render Cutter List
+        <div className="md:w-10/12 w-full">
+          <div className="mb-4 text-left md:mt-3">
+            <p className="text-lg font-medium text-white">
+              Tổng cộng{" "}
+              <span className="text-blue-700 text-2xl">{totalCutters}</span> dao
+              cắt
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            {cutters.map((cutter) => (
+              <CutterCard key={cutter.id} cutter={cutter} />
+            ))}
+          </ul>
         </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-          {cutters.map((cutter) => (
-            <CutterCard key={cutter.id} cutter={cutter} />
-          ))}
-        </ul>
-      </div>
+      ) : (
+        // Render CutterMachine List
+        <div className="md:w-10/12 w-full">
+          <div className="mb-4 text-left md:mt-3">
+            <p className="text-lg font-medium text-white">
+              Tổng cộng{" "}
+              <span className="text-blue-700 text-2xl">
+                {totalcuttingMchines}
+              </span>{" "}
+              Máy cắt
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            {cuttingMchines.map((cuttingMchine) => (
+              <CuttingMchineCard
+                key={cuttingMchine.id}
+                cuttingMchine={cuttingMchine}
+              />
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
