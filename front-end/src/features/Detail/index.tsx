@@ -5,7 +5,7 @@ import Video from "../../assets/videos/test.mp4";
 import { useState } from "react";
 import { FaFacebook, FaPhone, FaEnvelope, FaComments } from "react-icons/fa";
 import InformationCutter from "./components/InformationCutter";
-import Table from "./components/Table";
+import TechnicalDataTable from "./components/TechnicalDataTable";
 import { useEffect } from "react";
 
 function Detail() {
@@ -143,7 +143,7 @@ function Detail() {
         )}
       </div>
       {/* Bảng thông số kỹ thuật */}
-      <Table />
+      <TechnicalDataTable />
     </div>
   );
 }
