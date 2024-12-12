@@ -7,7 +7,7 @@ class CuttingMachineController {
       const url = process.env.HOSTNAME + req.files['image'][0].path.substr(10);
       req.body.image = url;
     } else {
-      return res.json({
+      return res.status(501).json({
         status: false,
         msg: "No image file uploaded!!!",
       });
