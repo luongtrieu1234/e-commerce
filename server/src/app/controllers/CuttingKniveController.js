@@ -32,6 +32,19 @@ class CuttingKniveController {
     }
   }
 
+  async readAll(req, res, next) {
+    try {
+      const cuttingKnives = await CuttingKnive.find();
+      if (cuttingKnives) {
+        return res.json({ cuttingKnives, status: true });
+      } else {
+        return res.json({ msg: "Cutting knives not found", status: false });
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
+
   async update(req, res, next) {
     if (req.files && req.files['image']) {
       const url = process.env.HOSTNAME + req.files['image'][0].path.substr(10);

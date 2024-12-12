@@ -29,6 +29,7 @@ const imageFilter = (req, file, cb) => {
 
 const uploadImage = multer({ storage: storageImage});
 
+Router.get("/", cuttingKniveController.readAll);
 Router.post("/", uploadImage.fields([{ name: 'image', maxCount: 1 }, { name: 'video', maxCount: 1 }]), cuttingKniveController.create);
 Router.get("/:id", cuttingKniveController.read);
 Router.put("/:id", uploadImage.fields([{ name: 'image', maxCount: 1 } ,{ name: 'video', maxCount: 1 }]), cuttingKniveController.update);

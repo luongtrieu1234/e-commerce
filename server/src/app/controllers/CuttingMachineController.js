@@ -16,6 +16,10 @@ class CuttingMachineController {
       const completedImages = req.files['completedImages'].map(file => process.env.HOSTNAME + file.path.substr(10));
       req.body.completedImages = completedImages;
     }
+    if (req.files && req.files['video']) {
+      const url = process.env.HOSTNAME + req.files['video'][0].path.substr(10);
+      req.body.video = url;
+    } 
     try {
       const cuttingMachine = new CuttingMachine(req.body);
       await cuttingMachine.save();
@@ -38,6 +42,19 @@ class CuttingMachineController {
     }
   }
 
+  async readAll(req, res, next) {
+    try {
+      const cuttingMachines = await CuttingMachine.find();
+      if (cuttingMachines) {
+        return res.json({ cuttingMachines, status: true });
+      } else {
+        return res.json({ msg: "Cutting machines not found", status: false });
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
+
   async update(req, res, next) {
     if (req.files && req.files['image']) {
       const url = process.env.HOSTNAME + req.files['image'][0].path.substr(10);
@@ -47,6 +64,10 @@ class CuttingMachineController {
       const completedImages = req.files['completedImages'].map(file => process.env.HOSTNAME + file.path.substr(10));
       req.body.completedImages = completedImages;
     }
+    if (req.files && req.files['video']) {
+      const url = process.env.HOSTNAME + req.files['video'][0].path.substr(10);
+      req.body.video = url;
+    } 
     try {
       const cuttingMachine = await CuttingMachine.findByIdAndUpdate(
         req.params.id,

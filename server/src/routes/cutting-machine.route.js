@@ -29,7 +29,7 @@ const imageFilter = (req, file, cb) => {
 };
 
 const uploadImage = multer({ storage: storageImage, fileFilter: imageFilter });
-
+Router.get("/", cuttingMachineController.readAll);
 Router.post("/", uploadImage.fields([{ name: 'image', maxCount: 1 }, 
   { name: 'completedImages', maxCount: 3 }]), cuttingMachineController.create);
 Router.get("/:id", cuttingMachineController.read);
