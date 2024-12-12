@@ -7,7 +7,7 @@ const cuttingMachineController = require("../app/controllers/CuttingMachineContr
 
 const storageImage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./src/public/upload/profile-image/");
+    cb(null,  process.env.LOCATION_FILE);
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
@@ -31,10 +31,10 @@ const imageFilter = (req, file, cb) => {
 const uploadImage = multer({ storage: storageImage, fileFilter: imageFilter });
 Router.get("/", cuttingMachineController.readAll);
 Router.post("/", uploadImage.fields([{ name: 'image', maxCount: 1 }, 
-  { name: 'completedImages', maxCount: 3 }]), cuttingMachineController.create);
+  { name: 'completedImages', maxCount: 3 },{ name: 'video', maxCount: 1 }]), cuttingMachineController.create);
 Router.get("/:id", cuttingMachineController.read);
 Router.put("/:id", uploadImage.fields([{ name: 'image', maxCount: 1 }, 
-  { name: 'completedImages', maxCount: 3 }]), cuttingMachineController.update);
+  { name: 'completedImages', maxCount: 3 },{ name: 'video', maxCount: 1 }]), cuttingMachineController.update);
 Router.delete("/:id", cuttingMachineController.delete);
 
 module.exports = Router;

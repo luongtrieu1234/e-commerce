@@ -4,6 +4,7 @@ const CuttingMachine = new mongoose.Schema(
 		productName: { type: String },
 		description: { type: String },
 		image: { type: String },
+		video: { type: String },
 		intro: { type: String },
 		highlights: { type: String },
 		completedImages: { type: [String] },
